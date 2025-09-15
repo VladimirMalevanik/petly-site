@@ -24,11 +24,10 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
+          node-version: '20'   # без cache — не нужен lockfile
 
       - name: Install deps
-        run: npm install        # <= используем install, чтобы не требовался package-lock.json
+        run: npm install --no-fund --no-audit
 
       - name: Build (Next.js static export)
         run: npm run build
