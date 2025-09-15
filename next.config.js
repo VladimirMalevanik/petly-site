@@ -1,11 +1,10 @@
 /** @type {import('next').NextConfig} */
 const isProd = process.env.NODE_ENV === "production";
+const repo = "petly-site"; // <-- если переименуешь репо, поменяй тут
 
-const nextConfig = {
+module.exports = {
   output: "export",
-  basePath: isProd ? "/petly" : "",
-  assetPrefix: isProd ? "/petly/" : "",
-  images: { unoptimized: true }, // мы используем <img>, но на всякий
+  basePath: isProd ? `/${repo}` : "",
+  assetPrefix: isProd ? `/${repo}/` : "",
+  images: { unoptimized: true },
 };
-
-module.exports = nextConfig;

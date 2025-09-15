@@ -50,13 +50,13 @@
 .cats-title .i{ position:relative; display:inline-block; padding-right:28px; }
 .cats-title .i::after{
   content:""; position:absolute; right:0; bottom:-6px; width:28px; height:28px;
-  background: url("/petly/images/cat-tail.png") no-repeat center/contain;
+  background: url("/petly-site/images/cat-tail.png") no-repeat center/contain;
 }
 
 /* ====== Заголовок «Собаки» (пятна далматинца) ====== */
 .dogs-title {
   @apply text-5xl font-extrabold inline-block relative;
-  background: url("/petly/images/dalmatian-pattern.png") repeat;
+  background: url("/petly-site/images/dalmatian-pattern.png") repeat;
   background-size: 120px;
   -webkit-background-clip: text;
   background-clip: text;
@@ -66,14 +66,14 @@
 .dogs-title .o::before,
 .dogs-title .o::after{
   content:""; position:absolute; top:-12px; width:34px; height:44px;
-  background: url("/petly/images/dog-ear.png") no-repeat center/contain;
+  background: url("/petly-site/images/dog-ear.png") no-repeat center/contain;
 }
 .dogs-title .o::before{ left:-8px; transform: rotate(-18deg); }
 .dogs-title .o::after { right:-8px; transform: scaleX(-1) rotate(18deg); }
 .dogs-title .i{ position:relative; display:inline-block; padding-right:32px; }
 .dogs-title .i::after{
   content:""; position:absolute; right:0; bottom:-6px; width:32px; height:32px;
-  background: url("/petly/images/dog-tail.png") no-repeat center/contain;
+  background: url("/petly-site/images/dog-tail.png") no-repeat center/contain;
 }
 
 /* ====== Конфигуратор ====== */
