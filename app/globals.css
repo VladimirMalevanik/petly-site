@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ====== Градиент-бренд для слова «Пэтли» ====== */
+.brand-gradient {
+  background: linear-gradient(45deg, #6dc7ff, #e36df8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ====== Шапка: тёмно-синий → розовый ====== */
+.hero-bg {
+  background: linear-gradient(90deg, #1e3c72 0%, #2a5298 50%, #f80759 100%);
+}
+
+/* ====== Плавное появление строк ====== */
+.line {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.line.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ====== Оверлей опроса: блюр ТОЛЬКО на фоне ====== */
+.overlay-wrap { position: fixed; inset: 0; z-index: 50; }
+.overlay-bg { position: absolute; inset: 0; overflow: hidden; }
+.overlay-img {
+  position: absolute; top: 0; width: 50%; height: 100%;
+  object-fit: cover; filter: blur(10px);
+}
+.overlay-cat { left: 0; }
+.overlay-dog { right: 0; }
+.overlay-dim { position: absolute; inset: 0; background: rgba(0,0,0,.55); }
+
+/* ====== Заголовок «Кошки» ====== */
+.cats-title { @apply text-5xl font-extrabold text-orange-400 inline-block relative; }
+.cats-title .o { position: relative; display: inline-block; }
+.cats-title .o::before,
+.cats-title .o::after{
+  content:""; position:absolute; width:0; height:0;
+  border-bottom: 12px solid #fb923c; border-left:8px solid transparent; border-right:8px solid transparent;
+}
+.cats-title .o::before{ top:-12px; left:0; transform: rotate(-15deg); }
+.cats-title .o::after { top:-12px; right:0; transform: rotate(15deg); }
+.cats-title .i{ position:relative; display:inline-block; padding-right:28px; }
+.cats-title .i::after{
+  content:""; position:absolute; right:0; bottom:-6px; width:28px; height:28px;
+  background: url("/petly/images/cat-tail.png") no-repeat center/contain;
+}
+
+/* ====== Заголовок «Собаки» (пятна далматинца) ====== */
+.dogs-title {
+  @apply text-5xl font-extrabold inline-block relative;
+  background: url("/petly/images/dalmatian-pattern.png") repeat;
+  background-size: 120px;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.dogs-title .o{ position:relative; display:inline-block; }
+.dogs-title .o::before,
+.dogs-title .o::after{
+  content:""; position:absolute; top:-12px; width:34px; height:44px;
+  background: url("/petly/images/dog-ear.png") no-repeat center/contain;
+}
+.dogs-title .o::before{ left:-8px; transform: rotate(-18deg); }
+.dogs-title .o::after { right:-8px; transform: scaleX(-1) rotate(18deg); }
+.dogs-title .i{ position:relative; display:inline-block; padding-right:32px; }
+.dogs-title .i::after{
+  content:""; position:absolute; right:0; bottom:-6px; width:32px; height:32px;
+  background: url("/petly/images/dog-tail.png") no-repeat center/contain;
+}
+
+/* ====== Конфигуратор ====== */
+.preview-wrap{ position:relative; width:320px; max-width:100%; }
+.preview-wrap img{ width:100%; display:block; }
+.preview-wrap .strap{ position:absolute; inset:0; }
+
+/* ====== Карусель ремешков ====== */
+.strap-list{
+  display:flex; overflow-x:auto; overflow-y:hidden;
+  scroll-behavior:smooth; gap:.5rem; padding:.25rem;
+  background:#111; border-radius:12px;
+}
+.strap-item{
+  flex:0 0 auto; padding:.5rem .8rem; border-radius:8px;
+  background:#222; cursor:pointer; white-space:nowrap; font-size:.95rem;
+}
+.strap-item.active{ background:linear-gradient(45deg,#ff6ec4,#7873f5); }
+
+/* ====== Нижняя панель ====== */
+.bottom-bar{ position:fixed; left:0; right:0; bottom:0; z-index:40; }
